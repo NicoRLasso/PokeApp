@@ -1,6 +1,5 @@
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
 import React, { Component } from "react";
-import StatsPokemon from "./StatsPokemon";
 export default class PokemonCard extends Component {
   render() {
     return (
@@ -25,7 +24,9 @@ export default class PokemonCard extends Component {
           <Col md={6} xs={6}>
             <ListGroup>
               {this.props.pokemon.stats.map((stats) => (
-                <StatsPokemon pokemon={stats} />
+                <ListGroup.Item>
+                  {stats.stat.name} : {stats.base_stat}
+                </ListGroup.Item>
               ))}
             </ListGroup>
           </Col>
