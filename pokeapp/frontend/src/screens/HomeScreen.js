@@ -22,7 +22,7 @@ export default class HomeScreen extends Component {
   }
   renderpokemon(data) {
     const appDiv = document.getElementById("cardforPokemon");
-    render(<PokemonCard pokemon={data} empty={true} />, appDiv);
+    render(<PokemonCard pokemon={data} />, appDiv);
   }
   render() {
     const selectpokemon = (e) => {
