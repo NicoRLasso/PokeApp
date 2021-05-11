@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import HomeScreen from "./screens/HomeScreen";
 import PokeScreen from "./screens/PokeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 import { render } from "react-dom";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -15,6 +17,8 @@ export default class App extends Component {
           <Container>
             <Route path="/" component={HomeScreen} exact />
             <Route path="/pokemonlist" component={PokeScreen} />
+            <Route path="/login" component={LoginScreen} />
+            <Route path="/register" component={RegisterScreen} />
           </Container>
         </main>
         <Footer />
@@ -22,6 +26,3 @@ export default class App extends Component {
     );
   }
 }
-
-const appDiv = document.getElementById("app");
-render(<App />, appDiv);
