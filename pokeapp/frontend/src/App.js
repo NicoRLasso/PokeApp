@@ -13,6 +13,7 @@ export default class App extends Component {
         <main className="py-3">
           <Container>
             <Route path="/" component={HomeScreen} exact />
+            <Route path="/register" />
           </Container>
         </main>
         <Footer />

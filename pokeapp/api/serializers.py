@@ -1,4 +1,6 @@
+from django.db.models import fields
 from rest_framework import serializers
+from .models import Pokemonapp
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -18,3 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
     def get_isAdmin(self , obj):
         return obj.is_staff
 
+class PokeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pokemonapp
+        fields="__all__"

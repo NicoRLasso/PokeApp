@@ -7,13 +7,13 @@ export default class HomeScreen extends Component {
   constructor() {
     super();
     this.state = { data: [] };
+    this.buscarpokemon = this.buscarpokemon.bind(this);
+    this.renderpokemon = this.renderpokemon.bind(this);
   }
   async componentDidMount() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
     const json = await response.json();
     this.setState({ data: json });
-    this.buscarpokemon = this.buscarpokemon.bind(this);
-    this.renderpokemon = this.renderpokemon.bind(this);
   }
   buscarpokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -22,7 +22,7 @@ export default class HomeScreen extends Component {
   }
   renderpokemon(data) {
     const appDiv = document.getElementById("cardforPokemon");
-    render(<PokemonCard pokemon={data} />, appDiv);
+    render(<PokemonCard pokemon={data} empty={true} />, appDiv);
   }
   render() {
     const selectpokemon = (e) => {
