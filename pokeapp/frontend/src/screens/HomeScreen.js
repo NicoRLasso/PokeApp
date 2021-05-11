@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { Row, Col, Image, Form } from "react-bootstrap";
+import { Row, Col, Image, Form, Card, ListGroup } from "react-bootstrap";
+import Loader from "../components/Loader";
 import PokemonCard from "../components/PokemonCard";
+import { render } from "react-dom";
 export default class HomeScreen extends Component {
   constructor() {
     super();
@@ -19,8 +21,8 @@ export default class HomeScreen extends Component {
       .then((data) => this.renderpokemon(data));
   }
   renderpokemon(data) {
-    const appDiv = document.getElementById("app");
-    render(<PokemonCard data={data} />, appDiv);
+    const appDiv = document.getElementById("cardforPokemon");
+    render(<PokemonCard pokemon={data} />, appDiv);
   }
   render() {
     const selectpokemon = (e) => {
@@ -82,7 +84,9 @@ export default class HomeScreen extends Component {
               </Form.Control>
             </h3>
           </Row>
-          <Row id="cardforPokemon"></Row>
+          <Row id="cardforPokemon">
+            <Loader />
+          </Row>
         </Col>
       </Row>
     );
