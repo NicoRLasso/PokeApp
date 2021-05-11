@@ -56,7 +56,7 @@ function RegisterScreen({ location, history }) {
             type="username"
             placeholder="Digite Nombre"
             value={username}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="email">
