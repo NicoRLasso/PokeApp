@@ -28,8 +28,20 @@ virtualenv venv
 source /venv/bin/activate
 ```
 
-instalar los requerimientos en la carpeta documentos
+clonar este repocitorio en la carpeta venv
+
+instalar los requerimientos en la carpeta Documentos
 
 ```bash
 pip install -r requirements.txt
 ```
+
+una ves instaldo estos requerimientos
+entrar a la carpeta pokeapi y correr el servidor
+
+```bash
+python manage.py runserver
+```
+
+![Alt text](/HomeScreen.PNG?raw=true "Home screen")
+![Alt text](/PokemonsinDB.PNG?raw=true "Pokemons screen")
