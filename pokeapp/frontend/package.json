@@ -22,9 +22,11 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@reduxjs/toolkit": "^1.5.1",
     "axios": "^0.21.1",
     "react-bootstrap": "^1.5.2",
     "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0"
   }
 }

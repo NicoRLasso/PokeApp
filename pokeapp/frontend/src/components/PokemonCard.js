@@ -1,7 +1,6 @@
 import { Card, Col, ListGroup, Row, Image, Button } from "react-bootstrap";
 import Message from "./Message";
 import React, { Component } from "react";
-import { LinkContainer } from "react-router-bootstrap";
 import { render } from "react-dom";
 export default class PokemonCard extends Component {
   constructor() {
@@ -29,27 +28,25 @@ export default class PokemonCard extends Component {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bodypost),
     };
-    fetch("http://127.0.0.1:8000/api/addpokemon/", requestOptions).then(
-      (response) => {
-        const appDiv = document.getElementById("mensajeresponsebut");
-        if (response.status == 403) {
-          response.json().then((data) => {
-            render(
-              <Message variant="danger">No has Ingresado aun</Message>,
-              appDiv
-            );
-          });
-        } else if (response.status == 400) {
-          response.json().then((data) => {
-            render(<Message variant="danger">{data.detail}</Message>, appDiv);
-          });
-        } else {
-          response.json().then((data) => {
-            render(<Message variant="success">{data.detail}</Message>, appDiv);
-          });
-        }
+    fetch("/api/addpokemon/", requestOptions).then((response) => {
+      const appDiv = document.getElementById("mensajeresponsebut");
+      if (response.status == 403) {
+        response.json().then((data) => {
+          render(
+            <Message variant="danger">No has Ingresado aun</Message>,
+            appDiv
+          );
+        });
+      } else if (response.status == 400) {
+        response.json().then((data) => {
+          render(<Message variant="danger">{data.detail}</Message>, appDiv);
+        });
+      } else {
+        response.json().then((data) => {
+          render(<Message variant="success">{data.detail}</Message>, appDiv);
+        });
       }
-    );
+    });
   };
   render() {
     return (

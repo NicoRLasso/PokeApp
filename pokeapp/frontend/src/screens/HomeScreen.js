@@ -12,8 +12,8 @@ export default class HomeScreen extends Component {
   }
   async componentDidMount() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
-    const json = await response.json();
-    this.setState({ data: json });
+    const responsejson = await response.json();
+    this.setState({ data: responsejson });
   }
   buscarpokemon(id) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
