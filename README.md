@@ -44,4 +44,4 @@ python manage.py runserver
 ```
 
 ![Alt text](/HomeScreen.PNG?raw=true "Home screen")
-![Alt text](/PokemonsinDB.PNG?raw=true "Pokemons screen")
+![Alt text](/PokemonsinDB.png?raw=true "Pokemons screen")
