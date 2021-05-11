@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Image, Form } from "react-bootstrap";
+import PokemonCard from "../components/PokemonCard";
 export default class HomeScreen extends Component {
   constructor() {
     super();
@@ -18,7 +19,8 @@ export default class HomeScreen extends Component {
       .then((data) => this.renderpokemon(data));
   }
   renderpokemon(data) {
-    console.log(data);
+    const appDiv = document.getElementById("app");
+    render(<PokemonCard data={data} />, appDiv);
   }
   render() {
     const selectpokemon = (e) => {
@@ -80,7 +82,7 @@ export default class HomeScreen extends Component {
               </Form.Control>
             </h3>
           </Row>
-          <Row id="cardforPokemon" hidden></Row>
+          <Row id="cardforPokemon"></Row>
         </Col>
       </Row>
     );
