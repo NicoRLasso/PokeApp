@@ -23,7 +23,7 @@ function RegisterScreen({ location, history }) {
     if (password !== confirmPassword) {
       setMessage("Password do not mactch ");
     } else {
-      dispatch(register(name, email, password));
+      dispatch(register(username, name, email, password));
     }
   };
 
